@@ -22,9 +22,12 @@
 import os
 
 file = "file.txt"
-source ="fileholderpre"
+source =""
 dest ="fileholder"
 #dest= os.path.join("/fileholder" ,file)
 
-# def move(file, source,dest):
-#     os.rename(os.path.join(source,file), os.path.join(dest,file)) 
+print(os.getcwd())
+def move(file, source,dest):
+    os.rename(os.path.join(source,file), os.path.join(dest,file)) 
+
+move(file,source,dest)

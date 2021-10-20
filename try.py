@@ -1,23 +1,29 @@
 import os
+#Source = os.chdir(os.path.join(os.path.expanduser("~"), "Experiment"))
+Source = ""
 
-def move(file, source,dest):
-    os.rename(os.path.join(source,file), os.path.join(dest,file)) 
+def move(file, source, dest):
+    os.rename(os.path.join("", file), os.path.join(dest, file))
 
 
 def check(fileName):
-    music=["mp3", "mp4" ]
-    docs=["txt", "pdf" ]
-    img=["png", "jpg" ]
-    ext=""
+    music = ["mp3", "mp4"]
+    docs = ["txt", "pdf"]
+    img = ["png", "jpg"]
+    ext = ""
     for i in range(3):
-        	ext = ext + fileName[-3 +i]
+        	ext = ext + fileName[-3 + i]
     print(ext)
     if ext in music:
-        	move(fileName,Source,Music)
+        	print(type(fileName))
+            
+        	move( fileName, os.getcwd() ,  "Music")
         	print(f"ext {ext} goes in music")
     elif ext in docs:
-    		print(f"ext {ext} goes in docs")
+        	move( fileName, os.getcwd(), "Documents")
+        	print(f"ext {ext} goes in docs")
     elif ext in img:
+        	move( fileName, os.getcwd(),"Pictures")
         	print(f"ext {ext} goes in picture")
     else:
     		print("no match found you can append it ")
@@ -26,8 +32,8 @@ def check(fileName):
 
 totalFiles =0
 total =0
-#print(os.getcwd())
-Source = os.chdir(os.path.join(os.path.expanduser("~"),"Experiment"))
+os.chdir(os.path.join(os.path.expanduser("~"), "Experiment"))
+# print(os.getcwd())
 print("---------------")
 print(os.getcwd())
 
@@ -39,6 +45,7 @@ for dir in dirs:
     if os.path.isfile(dir):
         totalFiles += 1
         check(dir)
+        print(totalFiles)
 
 
 
