@@ -1,52 +1,61 @@
-import os
-#Source = os.chdir(os.path.join(os.path.expanduser("~"), "Experiment"))
-Source = ""
 
-def move(file, source, dest):
-    os.rename(os.path.join("", file), os.path.join(dest, file))
+# import os
 
-
-def check(fileName):
-    music = ["mp3", "mp4"]
-    docs = ["txt", "pdf"]
-    img = ["png", "jpg"]
-    ext = ""
-    for i in range(3):
-        	ext = ext + fileName[-3 + i]
-    print(ext)
-    if ext in music:
-        	print(type(fileName))
-            
-        	move( fileName, os.getcwd() ,  "Music")
-        	print(f"ext {ext} goes in music")
-    elif ext in docs:
-        	move( fileName, os.getcwd(), "Documents")
-        	print(f"ext {ext} goes in docs")
-    elif ext in img:
-        	move( fileName, os.getcwd(),"Pictures")
-        	print(f"ext {ext} goes in picture")
-    else:
-    		print("no match found you can append it ")
+# #gives where the script is located
+# print(__file__)
 
 
-
-totalFiles =0
-total =0
-os.chdir(os.path.join(os.path.expanduser("~"), "Experiment"))
+# #gives from where the script was called
 # print(os.getcwd())
-print("---------------")
-print(os.getcwd())
 
-dirs= os.listdir()
-print(dirs)
-for all in dirs:
-    total += 1
-for dir in dirs:
-    if os.path.isfile(dir):
-        totalFiles += 1
-        check(dir)
-        print(totalFiles)
+name = "hello"
 
+print(name[len(name)-3:len(name)])
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ram = "nara.yan"
+# print("-----------------")
+
+
+
+# music=["mp3", "mp4"]
+# docs=["txt","pdf"]
+# img=["png","jpg"]
+# ext=""
+# for i in range(3):
+# 	ext = ext + fileName[-3 +i]
+# print(ext)
+# if ext in music:
+#         print(f"ext {ext} goes in music")
+# elif ext in docs:
+#     	print(f"ext {ext} goes in music")
+# elif ext in img:
+#         print(f"ext {ext} goes in music")
+# else:
+#     print("no match found you can append it ")
+# import os
+
+# file = "file.txt"
+# source =""
+# dest ="fileholder"
+# #dest= os.path.join("/fileholder" ,file)
+
+# print(os.getcwd())
+# def move(file, source,dest):
+#     os.rename(os.path.join(source,file), os.path.join(dest,file)) 
+
+# move(file,source,dest)
 
 
 
