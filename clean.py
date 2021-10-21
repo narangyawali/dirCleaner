@@ -1,6 +1,4 @@
 import os
-#Source = os.chdir(os.path.join(os.path.expanduser("~"), "Experiment"))
-Source = ""
 music = ["mp3", "mp4"]
 docs = ["txt", "pdf"]
 img = ["png", "jpg"]
@@ -12,8 +10,6 @@ def move(file, source, dest):
 def check(fileName):
     ext = ""
     ext = fileName[len(fileName)-3:len(fileName)]
-    # for i in range(3):
-    #     	ext = ext + fileName[-3 + i]
     print(ext)
     if ext in music:
         	print(type(fileName))
