@@ -8,21 +8,9 @@
 # #gives from where the script was called
 # print(os.getcwd())
 
-name = "hello"
+# name = "hello"
 
-print(name[len(name)-3:len(name)])
-
-
-
-
-
-
-
-
-
-
-
-
+# print(name[len(name)-3:len(name)])
 
 # ram = "nara.yan"
 # print("-----------------")
@@ -59,3 +47,7 @@ print(name[len(name)-3:len(name)])
 
 
 
+ext = input("extension of the file \n")
+if ext[0]=='.':
+    ext = ext[1:len(ext)]
+print(ext)
