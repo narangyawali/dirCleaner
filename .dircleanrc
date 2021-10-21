@@ -1,0 +1,5 @@
+{
+"Music":["mp3", "mp4"],
+"Docs": ["txt", "pdf",'pptx'],
+"Img" : ["png", "jpg"]
+}
