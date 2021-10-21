@@ -1,8 +1,18 @@
 import os
 #Source = os.chdir(os.path.join(os.path.expanduser("~"), "Experiment"))
-music = ["mp3", "mp4"]
-docs = ["txt", "pdf",'pptx']
-img = ["png", "jpg"]
+
+
+def reqdir():
+    rcfile = os.path.join(os.path.expanduser("~"), ".dircleanrc")
+    file = open(rcfile, "r")
+    fileContent = str(file.read())
+    thisDict = eval(fileContent)
+    for key in thisDict:
+        # print(key)
+        if not os.path.isdir(key):
+            os.mkdir(key)
+    return thisDict
+
 
 def move(file, source, dest):
     os.rename(os.path.join("", file), os.path.join(dest, file))
@@ -11,35 +21,22 @@ def move(file, source, dest):
 def check(fileName):
     ext = ""
     ext = fileName[len(fileName)-4:len(fileName)]
-    if ext[0]=='.':
+    if ext[0] == '.':
         ext = ext[1:len(ext)]
-    print(ext)
-    if ext in music:            
-        	move( fileName, os.getcwd() ,  "Music")
-        	print(f"ext {fileName} goes in music")
-    elif ext in docs:
-        	move( fileName, os.getcwd(), "Documents")
-        	print(f"ext {fileName} goes in docs")
-    elif ext in img:
-        	move( fileName, os.getcwd(),"Pictures")
-        	print(f"ext {fileName} goes in picture")
-    else:
-    		print("no match found you can append it ")
-
-
-
-
+    thisDict = reqdir()
+    for key in thisDict:
+        if ext in thisDict[key]:
+            move(fileName, os.getcwd(), key)
+            print(f" {fileName} goes in {key} ")
+            return
+            
 print("---------------")
 print(os.getcwd())
 
-dirs= os.listdir()
+dirs = os.listdir()
 print(dirs)
+print("---------------")
 
 for dir in dirs:
     if os.path.isfile(dir):
         check(dir)
-
-
-
-
-

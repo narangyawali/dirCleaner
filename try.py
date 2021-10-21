@@ -1,53 +1,17 @@
+import os
 
-# import os
+rcfile = os.path.join(os.path.expanduser("~"),".dircleanrc")
+file= open(rcfile,"r")
+fileContent = str( file.read())
+print(fileContent)
+#print(type(fileContent))
 
-# #gives where the script is located
-# print(__file__)
+thisDict = eval(fileContent)
+#print(type(thisDict))
+#thisDict = json.load(fileContent)
 
+for key in thisDict:
+     #print(key)
+     if not os.path.isdir(key):
+         os.mkdir(key)
 
-# #gives from where the script was called
-# print(os.getcwd())
-
-# name = "hello"
-
-# print(name[len(name)-3:len(name)])
-
-# ram = "nara.yan"
-# print("-----------------")
-
-
-
-# music=["mp3", "mp4"]
-# docs=["txt","pdf"]
-# img=["png","jpg"]
-# ext=""
-# for i in range(3):
-# 	ext = ext + fileName[-3 +i]
-# print(ext)
-# if ext in music:
-#         print(f"ext {ext} goes in music")
-# elif ext in docs:
-#     	print(f"ext {ext} goes in music")
-# elif ext in img:
-#         print(f"ext {ext} goes in music")
-# else:
-#     print("no match found you can append it ")
-# import os
-
-# file = "file.txt"
-# source =""
-# dest ="fileholder"
-# #dest= os.path.join("/fileholder" ,file)
-
-# print(os.getcwd())
-# def move(file, source,dest):
-#     os.rename(os.path.join(source,file), os.path.join(dest,file)) 
-
-# move(file,source,dest)
-
-
-
-ext = input("extension of the file \n")
-if ext[0]=='.':
-    ext = ext[1:len(ext)]
-print(ext)
