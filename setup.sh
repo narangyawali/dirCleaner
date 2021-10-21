@@ -3,6 +3,7 @@
 
 chmod +x ./dist/dirclean
 sudo cp ./dist/dirclean /bin/
+cp ./.dircleanrc ~/
 
 if [ -f ~/.bashrc ]
 then
