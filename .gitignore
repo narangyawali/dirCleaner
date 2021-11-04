@@ -1,0 +1,15 @@
+# .gitignore
+# files to be ignored if created while working with this project
+bin
+lib
+pyvenv.cfg
+__pycache__
+# file used while developing 
+fileholder
+fileholderpre
+Music
+Docs
+Img
+file.txt
+build
+dirclean.spec
