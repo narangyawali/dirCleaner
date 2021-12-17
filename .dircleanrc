@@ -1,5 +1,8 @@
 {
 "Music":["mp3", "mp4"],
 "Docs": ["txt", "pdf",'pptx'],
-"Img" : ["png", "jpg"]
+"Img" : ["png", "jpg","jpeg"],
+"ebooks":["epub", "mobi"],
+"Programs":["rpm","deb"],
+"archive":["zip"]
 }
