@@ -10,7 +10,8 @@ Helps to manage files in a directory
 ---
 # how to use 
 go to desired directory and type the following command
-`dirclean` or `dc`
+`dirclean` or 
+`dc` if alias is set up disabled on default
 ---
 # details
 moves the files according to its formate in seperate directory and make it clean
